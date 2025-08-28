@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Preview Lagu</title>
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: sans-serif;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        audio {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        a.button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background-color: #ff3e00;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a.button:hover {
+            background-color: #cc3200;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preview Lagu</h1>
+    <audio controls>
+        <source src="{{ url_for('play', filename=filename) }}" type="audio/mpeg">
+        Browser kamu tidak support pemutar audio.
+    </audio>
+    <br>
+    <a class="button" href="{{ url_for('get_file', filename=filename) }}">Download MP3</a>
+</body>
+</html>
